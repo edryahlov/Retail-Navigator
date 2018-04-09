@@ -1,0 +1,90 @@
+$panelPadding: 20px;
+$panelWidth: 300px;
+$panelTotalWidth: $panelWidth+$panelPadding * 2; //don't forget to change in App.jsx
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    transition: transform .2s;
+}
+
+body.ps-active-right {
+    transform: translateX(-$panelTotalWidth);
+}
+
+.panel {
+    position: fixed;
+    top: 0;
+    width: $panelWidth;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    overflow-y: auto;
+    a {
+        color: #fff;
+    }
+    &__inner {
+        padding: $panelPadding;
+        b {
+            color: silver;
+        }
+    }
+    &__comments-header {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    textarea {
+        width: 100%;
+        height: 100px;
+        margin-bottom: 10px;
+        display: block;
+    }
+    button,
+    input {
+        width: 100%;
+    }
+}
+
+#right-panel {
+    right: 0;
+    transform: translateX($panelTotalWidth);
+}
+
+.comment {
+    hr {
+        border-top: 1px solid gray;
+    }
+    &__created {
+        font-size: 14px;
+        font-style: italic;
+    }
+    &__message {
+        font-size: 14px;
+    }
+}
+
+table {
+    a {
+        text-align: center;
+        display: inline-block;
+        text-decoration: underline;
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+    td,
+    th {
+        padding: 5px;
+    }
+    th {
+        white-space: nowrap;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
